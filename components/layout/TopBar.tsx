@@ -43,16 +43,16 @@ const TopBar = () => {
   };
 
   return (
-    <header className="flex h-14 w-full shrink-0 items-center justify-between border-b border-neutral-200 px-8 text-sm">
+    <header className="flex h-14 w-full shrink-0 items-center justify-between border-b border-neutral-200 px-4 text-sm">
       <a
         href="/"
-        className="font-semibold tracking-tight text-neutral-900"
-        aria-label="Aditya.S home"
+        className="font-semibold tracking-tight text-neutral-900 w-[26%]"
+        aria-label="Ajay home"
       >
-        Aditya.S
+        Ajay.Raj.Negi
       </a>
 
-      <nav aria-label="Primary" className="flex items-center gap-6">
+      <nav aria-label="Primary" className="flex items-start w-[46%] gap-2">
         {navItems.map((item) => (
           <a
             key={item.label}
@@ -68,15 +68,15 @@ const TopBar = () => {
         ))}
       </nav>
 
-      <div className="flex items-center gap-6">
-        <span className="text-neutral-500">
+      <div className="flex items-center justify-between text-sm font-medium tracking-tight w-[26%]">
+        <span className="text-muted-foreground">
           {now ? formatDateTime(now) : ""}
         </span>
         <button
           type="button"
           onClick={handleBookCall}
           aria-label="Book a call"
-          className="font-medium text-neutral-900 hover:underline"
+          className="font-medium text-foreground hover:underline"
         >
           Book a Call
         </button>

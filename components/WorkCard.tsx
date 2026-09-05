@@ -8,7 +8,13 @@ type WorkCardProps = {
   year: string;
 };
 
-const WorkCard = ({ title, gradient, subTitle, desc, year }: WorkCardProps) => {
+export default function WorkCard({
+  title,
+  gradient,
+  subTitle,
+  desc,
+  year,
+}: WorkCardProps) {
   return (
     <div>
       <div
@@ -39,8 +45,9 @@ const WorkCard = ({ title, gradient, subTitle, desc, year }: WorkCardProps) => {
         </button>
       </div>
       <div className="flex flex-row justify-between mt-1.5">
-        <div className="text-sm font-medium tracking-tight">
-          <span>{title}</span>:
+        <div className="text-sm font-medium tracking-tight flex items-center">
+          <span className="mr-2">{title}</span>
+          <div className="h-1 w-1 bg-muted-foreground rotate-45" />
           <span className="text-muted-foreground ml-2">{subTitle}</span>
         </div>
         <div className="text-sm font-medium tracking-tight text-muted-foreground">
@@ -49,6 +56,4 @@ const WorkCard = ({ title, gradient, subTitle, desc, year }: WorkCardProps) => {
       </div>
     </div>
   );
-};
-
-export default WorkCard;
+}
