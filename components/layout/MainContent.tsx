@@ -1,6 +1,9 @@
-import { Marquee } from "../ui/marquee";
+"use client";
+
+import { motion } from "motion/react";
 import MarqueeComponent from "../ui/marqueeComponent";
 import WorkCard from "../WorkCard";
+import { TextReveal } from "../motion/text-reveal";
 
 type WorkItem = {
   title: string;
@@ -72,19 +75,44 @@ const workItems: WorkItem[] = [
 ];
 
 export default function MainContent() {
+  const firstText =
+    "A visual designer specializing in brand identity and visual communication";
+
+  const secondText =
+    " — creating strategic visual systems that feel intentional, refined, and timeless.";
   return (
     <main className="h-full flex-1 overflow-y-auto border-r border-neutral-200 scrollbar-none [&::-webkit-scrollbar]:hidden">
-      <div className="pt-0 pb-20">
-        <div className="sticky top-0 z-0 px-4 pt-20 mb-2">
-          <div className="flex flex-col gap-16">
-            <h2 className="text-[26px] text-pretty font-medium tracking-tight leading-7 text-neutral-900">
-              A visual designer specializing in brand identity and visual
-              communication{" "}
-              <span className="text-neutral-400">
-                — creating strategic visual systems that feel intentional,
-                refined, and timeless.
-              </span>
-            </h2>
+      <div className="pt-0">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="sticky top-0 z-0 px-4 pt-20 mb-"
+        >
+          <div className="flex gap-16">
+            <div className="min-w-full">
+              <TextReveal
+                as="span"
+                className="text-left text-[26px] font-medium leading-[1.05] tracking-tighter"
+                per="word"
+                preset="fade-in-blur"
+                speedReveal={1.8}
+              >
+                {firstText}
+              </TextReveal>
+
+              <TextReveal
+                as="span"
+                className="text-left text-[26px] font-medium leading-[1.05] tracking-tighter"
+                per="word"
+                delay={0.6}
+                preset="fade-in-blur"
+                speedReveal={1.8}
+              >
+                {secondText}
+              </TextReveal>
+            </div>
 
             <div className="flex items-end justify-between text-sm mt-40">
               <h3 className="text-lg tracking-tight font-medium text-neutral-900">
@@ -96,8 +124,7 @@ export default function MainContent() {
               </span>
             </div>
           </div>
-        </div>
-
+        </motion.div>
         <div className="relative z-10 -mt-px flex flex-col gap-6 pb-16 px-4 bg-background">
           {workItems.map((item) => (
             <WorkCard
@@ -111,7 +138,6 @@ export default function MainContent() {
             />
           ))}
         </div>
-
         <MarqueeComponent />
       </div>
     </main>

@@ -96,7 +96,7 @@ export function Marquee({
           {
             "flex-row": !vertical,
             "flex-col": vertical,
-            "pause-on-hover": pauseOnHover,
+            "pause-on-hover": false,
           },
           className,
         )}

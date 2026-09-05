@@ -1,5 +1,6 @@
 import { Bird, FileText, Link, WandSparkles } from "lucide-react";
 import type { ReactNode } from "react";
+import { TextReveal } from "../motion/text-reveal";
 
 type SocialLink = {
   label: string;
@@ -27,13 +28,38 @@ const specialties: Specialty[] = [
 ];
 
 const LeftSidebar = () => {
+  const text = "Hello! \n I'm Ajay.";
   return (
     <aside className="flex h-full w-[27%] shrink-0 flex-col justify-between overflow-hidden border-r border-neutral-200 p-4 py-0 pt-20">
-      <h1 className="text-[56px] font-medium leading-[1.05] tracking-tighter text-neutral-900">
+      {/* <h1 className="text-[56px] font-medium leading-[1.05] tracking-tighter text-neutral-900">
         Hello!
         <br />
         I&apos;m Ajay.
-      </h1>
+      </h1> */}
+      <div>
+        <div className="flex items-start justify-start">
+          <TextReveal
+            as="h1"
+            className="text-left text-[56px] font-medium leading-[1.05] tracking-tighter "
+            per="word"
+            preset="fade-in-blur"
+            speedReveal={0.2}
+          >
+            Hello
+          </TextReveal>
+        </div>
+        <div className="flex items-center justify-start">
+          <TextReveal
+            as="h1"
+            className="text-left text-[56px] font-medium leading-[1.05] tracking-tighter"
+            per="word"
+            preset="fade-in-blur"
+            speedReveal={1.2}
+          >
+            I'm Ajay
+          </TextReveal>
+        </div>
+      </div>
 
       <nav aria-label="Social links" className="flex flex-col gap-4">
         {socialLinks.map((link) => (
