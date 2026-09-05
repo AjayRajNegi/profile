@@ -1,3 +1,5 @@
+import { Marquee } from "../ui/marquee";
+import MarqueeComponent from "../ui/marqueeComponent";
 import WorkCard from "../WorkCard";
 
 type WorkItem = {
@@ -72,8 +74,8 @@ const workItems: WorkItem[] = [
 export default function MainContent() {
   return (
     <main className="h-full flex-1 overflow-y-auto border-r border-neutral-200 scrollbar-none [&::-webkit-scrollbar]:hidden">
-      <div className="p-4 pt-0">
-        <div className="sticky top-0 z-0 pt-20 mb-2">
+      <div className="pt-0 pb-20">
+        <div className="sticky top-0 z-0 px-4 pt-20 mb-2">
           <div className="flex flex-col gap-16">
             <h2 className="text-[26px] text-pretty font-medium tracking-tight leading-7 text-neutral-900">
               A visual designer specializing in brand identity and visual
@@ -96,7 +98,7 @@ export default function MainContent() {
           </div>
         </div>
 
-        <div className="relative z-10 -mt-px flex flex-col gap-6 pb-16 bg-background">
+        <div className="relative z-10 -mt-px flex flex-col gap-6 pb-16 px-4 bg-background">
           {workItems.map((item) => (
             <WorkCard
               key={item.title}
@@ -109,6 +111,8 @@ export default function MainContent() {
             />
           ))}
         </div>
+
+        <MarqueeComponent />
       </div>
     </main>
   );
