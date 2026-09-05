@@ -11,27 +11,29 @@ const contactLinks: ContactLink[] = [
   { label: "+91 8130 103415", href: "tel:+918130103415" },
 ];
 
-const RightSidebar = () => {
+export default function RightSidebar() {
   return (
-    <aside className="flex h-full w-70 shrink-0 flex-col justify-between overflow-hidden px-8 py-8">
-      <span className="flex w-fit items-center gap-2 text-xs text-neutral-500">
-        <span
-          className="h-1.5 w-1.5 rounded-full bg-green-500"
-          aria-hidden="true"
-        />
-        Available for work
-      </span>
+    <aside className="flex h-full w-[27%] shrink-0 flex-col justify-between overflow-hidden p-8 pt-20 py-0">
+      <div className="flex flex-row justify-between items-start">
+        <span className="flex w-fit items-center gap-2 text-xs text-neutral-500">
+          <span
+            className="h-1.5 w-1.5 rounded-full bg-green-500"
+            aria-hidden="true"
+          />
+          Available for work
+        </span>
 
-      <div className="flex flex-col items-end gap-4">
-        <div className="h-32 w-28 overflow-hidden rounded-2xl bg-neutral-100">
-          {/* Swap for next/image with a real portrait, e.g.
+        <div className="flex flex-col items-end gap-4">
+          <div className="h-32 w-28 overflow-hidden rounded-2xl bg-neutral-100">
+            {/* Swap for next/image with a real portrait, e.g.
                 <Image src="/profile.jpg" alt="Aditya" width={112} height={128} className="object-cover" /> */}
-        </div>
+          </div>
 
-        <div className="text-right text-sm leading-relaxed">
-          <p className="text-neutral-900">Visual Designer</p>
-          <p className="text-neutral-900">Based in India</p>
-          <p className="text-neutral-400">Since 2022</p>
+          <div className="text-right text-sm leading-relaxed">
+            <p className="text-neutral-900">Visual Designer</p>
+            <p className="text-neutral-900">Based in India</p>
+            <p className="text-neutral-400">Since 2022</p>
+          </div>
         </div>
       </div>
 
@@ -49,6 +51,4 @@ const RightSidebar = () => {
       </div>
     </aside>
   );
-};
-
-export default RightSidebar;
+}

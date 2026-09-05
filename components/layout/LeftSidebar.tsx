@@ -20,19 +20,19 @@ const socialLinks: SocialLink[] = [
 ];
 
 const specialties: Specialty[] = [
-  { label: "Brand Identity", isActive: true },
-  { label: "Visual Systems", isActive: false },
-  { label: "Creative Direction", isActive: false },
-  { label: "Photography", isActive: false },
+  { label: "Full-Stack Developer", isActive: true },
+  { label: "Devops Engineer", isActive: true },
+  { label: "React Native Developer", isActive: true },
+  { label: "Video Editor", isActive: true },
 ];
 
 const LeftSidebar = () => {
   return (
-    <aside className="flex h-full w-[280px] shrink-0 flex-col justify-between overflow-hidden border-r border-neutral-200 px-8 py-8">
-      <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight text-neutral-900">
+    <aside className="flex h-full w-[27%] shrink-0 flex-col justify-between overflow-hidden border-r border-neutral-200 p-4 py-0 pt-20">
+      <h1 className="text-[56px] font-medium leading-[1.05] tracking-tighter text-neutral-900">
         Hello!
         <br />
-        I&apos;m Aditya.
+        I&apos;m Ajay.
       </h1>
 
       <nav aria-label="Social links" className="flex flex-col gap-4">
@@ -54,8 +54,8 @@ const LeftSidebar = () => {
             key={specialty.label}
             className={
               specialty.isActive
-                ? "border-t border-neutral-200 py-3 text-sm font-medium text-neutral-900"
-                : "border-t border-neutral-200 py-3 text-sm text-neutral-400"
+                ? "border-b border-neutral-200 py-1 text-[15px] font-medium text-neutral-900 tracking-tight"
+                : "border-b border-neutral-200 py-1 text-[15px] text-neutral-400 tracking-tight"
             }
           >
             {specialty.label}
