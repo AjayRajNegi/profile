@@ -6,6 +6,8 @@ type WorkItem = {
   subTitle: string;
   desc: string;
   year: string;
+  url: string;
+  link: string;
 };
 
 const workItems: WorkItem[] = [
@@ -15,6 +17,8 @@ const workItems: WorkItem[] = [
     subTitle: "Festival Identity",
     desc: "",
     year: "'24",
+    url: "/works/cnip.png",
+    link: "cnipbotics.com",
   },
   {
     title: "Nimbus",
@@ -22,6 +26,8 @@ const workItems: WorkItem[] = [
     subTitle: "",
     desc: "",
     year: "'24",
+    url: "/works/cnip.png",
+    link: "cnipbotics.com",
   },
   {
     title: "Kavaa",
@@ -29,6 +35,8 @@ const workItems: WorkItem[] = [
     subTitle: "",
     desc: "",
     year: "'24",
+    url: "/works/cnip.png",
+    link: "cnipbotics.com",
   },
   {
     title: "Ember",
@@ -36,6 +44,8 @@ const workItems: WorkItem[] = [
     subTitle: "",
     desc: "",
     year: "'24",
+    url: "/works/cnip.png",
+    link: "cnipbotics.com",
   },
   {
     title: "Loom",
@@ -43,6 +53,8 @@ const workItems: WorkItem[] = [
     subTitle: "",
     desc: "",
     year: "'24",
+    url: "/works/cnip.png",
+    link: "cnipbotics.com",
   },
   {
     title: "Terra",
@@ -50,13 +62,15 @@ const workItems: WorkItem[] = [
     subTitle: "",
     desc: "",
     year: "'24",
+    url: "/works/cnip.png",
+    link: "cnipbotics.com",
   },
 ];
 
 export default function () {
   return (
     <main className="h-full flex-1 overflow-y-auto border-r border-neutral-200 scrollbar-none [&::-webkit-scrollbar]:hidden">
-      <div className="p-4">
+      <div className="p-4 pt-0">
         <div className="sticky top-0 z-0 pt-20 mb-2">
           <div className="flex flex-col gap-16">
             <h2 className="text-[26px] text-pretty font-medium tracking-tight leading-7 text-neutral-900">
@@ -89,6 +103,8 @@ export default function () {
               subTitle={item.subTitle}
               desc={item.desc}
               year={item.year}
+              url={item.url}
+              link={item.link}
             />
           ))}
         </div>

@@ -10,8 +10,8 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { label: "Home", href: "/", isActive: true },
-  { label: "Work", href: "/work", isActive: false },
-  { label: "Info", href: "/info", isActive: false },
+  // { label: "Work", href: "/work", isActive: false },
+  // { label: "Info", href: "/info", isActive: false },
 ];
 
 const formatDateTime = (date: Date): string => {
