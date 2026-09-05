@@ -20,12 +20,36 @@ const workItems: WorkItem[] = [
     link: "https://www.cnipbotics.com",
   },
   {
+    title: "Cnippet.Stack",
+    subTitle: "Developers CLI tool.",
+    desc: "",
+    year: "'26",
+    url: "/works/stack.png",
+    link: "https://stack.cnippet.dev",
+  },
+  {
     title: "Gaiaspace",
     subTitle: "Building sustainable space technologies.",
     desc: "",
     year: "'24",
-    url: "/works/gaia1.png",
+    url: "/works/gaia.png",
     link: "https://www.gaiaspace.co.in",
+  },
+  {
+    title: "Griya",
+    subTitle: "Real estate platform",
+    desc: "",
+    year: "'24",
+    url: "/works/grihya2.png",
+    link: "https://grihya.in",
+  },
+  {
+    title: "Seahawk",
+    subTitle: "Making developers life less stressful.",
+    desc: "",
+    year: "'26",
+    url: "/works/sea.png",
+    link: "https://www.seahawkadventures.com/",
   },
   {
     title: "XDesign",
@@ -36,14 +60,6 @@ const workItems: WorkItem[] = [
     link: "https://design.ajayhtml.online",
   },
   {
-    title: "Griya",
-    subTitle: "Real estate platform",
-    desc: "",
-    year: "'24",
-    url: "/works/grihya.png",
-    link: "https://grihya.in",
-  },
-  {
     title: "Cnippet",
     subTitle: "Making developers life less stressful.",
     desc: "",
@@ -51,17 +67,9 @@ const workItems: WorkItem[] = [
     url: "/works/cnippet.png",
     link: "https://cnippet.dev",
   },
-  {
-    title: "Cnippet.Stack",
-    subTitle: "Developers CLI tool.",
-    desc: "",
-    year: "'26",
-    url: "/works/stack.png",
-    link: "https://stack.cnippet.dev",
-  },
 ];
 
-export default function () {
+export default function MainContent() {
   return (
     <main className="h-full flex-1 overflow-y-auto border-r border-neutral-200 scrollbar-none [&::-webkit-scrollbar]:hidden">
       <div className="p-4 pt-0">

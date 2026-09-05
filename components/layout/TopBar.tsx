@@ -46,7 +46,7 @@ const TopBar = () => {
     <header className="flex h-14 w-full shrink-0 items-center justify-between border-b border-neutral-200 px-4 text-sm">
       <a
         href="/"
-        className="font-semibold tracking-tight text-neutral-900 w-[26%]"
+        className="font-medium tracking-tight text-base text-neutral-900 w-[26%]"
         aria-label="Ajay home"
       >
         Ajay.Raj.Negi
