@@ -32,17 +32,17 @@ const specialties: Specialty[] = [
 
 const LeftSidebar = () => {
   return (
-    <aside className="flex h-full w-[27%] shrink-0 flex-col justify-between overflow-hidden border-r border-neutral-200 p-4 py-0 pt-20">
+    <aside className="flex h-fit lg:h-full w-full lg:w-[27%] shrink-0 flex-col justify-between overflow-hidden border-r border-neutral-200 p-4 py-0 pt-20 gap-4 lg:gap-0">
       <div>
         <div className="flex items-start justify-start">
           <TextReveal
             as="h1"
-            className="text-left text-[56px] font-medium leading-[1.05] tracking-tighter"
+            className="text-left text-[40px] font-medium leading-[1.05] tracking-tighter"
             per="word"
             preset="fade-in-blur"
             speedReveal={0.2}
           >
-            Hello
+            Hello!
           </TextReveal>
         </div>
 
@@ -50,7 +50,7 @@ const LeftSidebar = () => {
         <div className="flex items-center justify-start">
           <TextReveal
             as="h1"
-            className="text-left text-[56px] font-medium leading-[1.05] tracking-tighter"
+            className="text-left text-[40px] font-medium leading-[1.05] tracking-tighter"
             per="word"
             preset="fade-in-blur"
             speedReveal={1.2}
@@ -62,7 +62,7 @@ const LeftSidebar = () => {
 
       <motion.nav
         aria-label="Social links"
-        className="flex flex-col gap-4"
+        className="flex flex-row lg:flex-col gap-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
@@ -90,10 +90,9 @@ const LeftSidebar = () => {
         ))}
       </motion.nav>
 
-      {/* Specialties */}
       <motion.nav
         aria-label="Specialties"
-        className="flex flex-col"
+        className="flex flex-col mt-8 lg:mt-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{

@@ -12,13 +12,18 @@ const inter = Inter({
 export default function PortfolioPage() {
   return (
     <div
-      className={`${inter.className} flex h-screen w-full flex-col overflow-hidden bg-white text-neutral-900`}
+      className={`${inter.className} flex h-screen w-full flex-col lg:overflow-hidden bg-white text-neutral-900`}
     >
       <TopBar />
-      <div className="flex flex-1 overflow-hidden">
+      <div className="overflow-hidden hidden lg:flex-1 lg:flex">
         <LeftSidebar />
         <MainContent />
         <RightSidebar />
+      </div>
+      <div className="flex flex-col lg:hidden">
+        <LeftSidebar />
+        <RightSidebar />
+        <MainContent />
       </div>
     </div>
   );

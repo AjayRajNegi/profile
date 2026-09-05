@@ -114,7 +114,7 @@ export default function MainContent() {
               </TextReveal>
             </div>
 
-            <div className="flex items-end justify-between text-sm mt-40">
+            <div className="flex items-end justify-between text-sm mt-20 lg:mt-40">
               <h3 className="text-lg tracking-tight font-medium text-neutral-900">
                 Selected work
               </h3>

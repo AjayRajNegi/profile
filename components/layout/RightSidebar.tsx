@@ -19,7 +19,7 @@ const contactLinks: ContactLink[] = [
 
 export default function RightSidebar() {
   return (
-    <aside className="flex h-full w-[27%] shrink-0 flex-col justify-between overflow-hidden p-4 py-0 pt-20">
+    <aside className="flex h-fit lg:h-full w-full lg:w-[27%] lg:shrink-0 flex-col justify-between overflow-hidden p-4 py-0 pt-20">
       <div className="flex flex-row items-start justify-between">
         <span className="flex w-fit items-center gap-2 text-sm font-medium tracking-tight">
           <motion.div
@@ -69,7 +69,7 @@ export default function RightSidebar() {
               src="/profile.jpg"
               alt="Aditya"
               width={170}
-              height={220}
+              height={280}
               className="object-cover"
             />
           </motion.div>
