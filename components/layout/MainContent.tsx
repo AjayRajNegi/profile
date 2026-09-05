@@ -88,9 +88,9 @@ export default function MainContent() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="sticky top-0 z-0 px-4 pt-20 mb-"
+          className="sticky top-0 z-0 px-4 pt-20"
         >
-          <div className="flex gap-16">
+          <div className="gap-16">
             <div className="min-w-full">
               <TextReveal
                 as="span"
@@ -104,7 +104,7 @@ export default function MainContent() {
 
               <TextReveal
                 as="span"
-                className="text-left text-[26px] font-medium leading-[1.05] tracking-tighter"
+                className="text-left text-[26px] font-medium leading-[1.05] tracking-tighter text-muted-foreground"
                 per="word"
                 delay={0.6}
                 preset="fade-in-blur"
@@ -125,8 +125,17 @@ export default function MainContent() {
             </div>
           </div>
         </motion.div>
-        <div className="relative z-10 -mt-px flex flex-col gap-6 pb-16 px-4 bg-background">
-          {workItems.map((item) => (
+        <motion.div
+          className="relative z-10 -mt-px flex flex-col gap-6 pb-16 px-4 bg-background"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.6,
+            delay: 0,
+            ease: "easeOut",
+          }}
+        >
+          {workItems.map((item, index) => (
             <WorkCard
               key={item.title}
               title={item.title}
@@ -135,9 +144,10 @@ export default function MainContent() {
               year={item.year}
               url={item.url}
               link={item.link}
+              index={index}
             />
           ))}
-        </div>
+        </motion.div>
         <MarqueeComponent />
       </div>
     </main>

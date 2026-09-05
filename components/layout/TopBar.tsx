@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 type NavItem = {
@@ -44,15 +45,32 @@ const TopBar = () => {
 
   return (
     <header className="flex h-14 w-full shrink-0 items-center justify-between border-b border-neutral-200 px-4 text-sm">
-      <a
+      <motion.a
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 1,
+          delay: 0.3,
+          ease: "easeOut",
+        }}
         href="/"
         className="font-medium tracking-tight text-base text-neutral-900 w-[26%]"
         aria-label="Ajay home"
       >
         Ajay.Raj.Negi
-      </a>
+      </motion.a>
 
-      <nav aria-label="Primary" className="flex items-start w-[46%] gap-2">
+      <motion.nav
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 1,
+          delay: 0.3,
+          ease: "easeOut",
+        }}
+        aria-label="Primary"
+        className="flex items-start w-[46%] gap-2"
+      >
         {navItems.map((item) => (
           <a
             key={item.label}
@@ -66,9 +84,18 @@ const TopBar = () => {
             {item.label}
           </a>
         ))}
-      </nav>
+      </motion.nav>
 
-      <div className="flex items-center justify-between text-sm font-medium tracking-tight w-[26%]">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 1,
+          delay: 0.3,
+          ease: "easeOut",
+        }}
+        className="flex items-center justify-between text-sm font-medium tracking-tight w-[26%]"
+      >
         <span className="text-muted-foreground">
           {now ? formatDateTime(now) : ""}
         </span>
@@ -80,7 +107,7 @@ const TopBar = () => {
         >
           Book a Call
         </button>
-      </div>
+      </motion.div>
     </header>
   );
 };

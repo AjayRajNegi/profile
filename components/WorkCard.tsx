@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import Image from "next/image";
 
 type WorkCardProps = {
@@ -7,6 +10,7 @@ type WorkCardProps = {
   year: string;
   url: string;
   link: string;
+  index: number;
 };
 
 export default function WorkCard({
@@ -16,53 +20,51 @@ export default function WorkCard({
   year,
   url,
   link,
+  index,
 }: WorkCardProps) {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{
+        once: true,
+        amount: 0.2,
+      }}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.08,
+        ease: "easeOut",
+      }}
+    >
       <a
         rel="external"
         target="_blank"
         href={link}
         role="group"
         aria-label={`${title} project preview`}
-        className={`relative flex w-full aspect-video items-center justify-center overflow-hidden rounded-none border`}
+        className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-none border"
       >
         <Image
           src={url}
           alt={title}
           fill
-          className="object-cover aspect-video object-top"
+          className="aspect-video object-cover object-top"
         />
-        {/* <button
-          type="button"
-          aria-label="Previous project"
-          className="absolute left-6 text-white/70 transition-colors hover:text-white"
-        >
-          <ChevronLeft size={18} />
-        </button>
-
-        <span className="text-3xl font-semibold uppercase tracking-wide text-white">
-          {title}
-        </span>
-
-        <button
-          type="button"
-          aria-label="Next project"
-          className="absolute right-6 text-white/70 transition-colors hover:text-white"
-        >
-          <ChevronRight size={18} />
-        </button> */}
       </a>
-      <div className="flex flex-row justify-between mt-1.5">
-        <div className="text-sm font-medium tracking-tight flex items-center">
+
+      <div className="mt-1.5 flex flex-row justify-between">
+        <div className="flex items-center text-sm font-medium tracking-tight">
           <span className="mr-2">{title}</span>
-          <div className="h-1 w-1 bg-muted-foreground rotate-45" />
-          <span className="text-muted-foreground ml-2">{subTitle}</span>
+
+          <div className="h-1 w-1 rotate-45 bg-muted-foreground" />
+
+          <span className="ml-2 text-muted-foreground">{subTitle}</span>
         </div>
+
         <div className="text-sm font-medium tracking-tight text-muted-foreground">
           {year}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
