@@ -1,9 +1,7 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 type WorkCardProps = {
   title: string;
-  gradient: string;
   subTitle: string;
   desc: string;
   year: string;
@@ -13,7 +11,6 @@ type WorkCardProps = {
 
 export default function WorkCard({
   title,
-  gradient,
   subTitle,
   desc,
   year,
@@ -22,12 +19,20 @@ export default function WorkCard({
 }: WorkCardProps) {
   return (
     <div>
-      <div
+      <a
+        rel="external"
+        target="_blank"
+        href={link}
         role="group"
         aria-label={`${title} project preview`}
-        className={`relative flex h-100 items-center justify-center overflow-hidden rounded-none bg-linear-to-br ${gradient}`}
+        className={`relative flex w-full aspect-video items-center justify-center overflow-hidden rounded-none border`}
       >
-        <Image src={url} alt={title} fill className="object-cover" />
+        <Image
+          src={url}
+          alt={title}
+          fill
+          className="object-cover aspect-video object-top"
+        />
         {/* <button
           type="button"
           aria-label="Previous project"
@@ -47,7 +52,7 @@ export default function WorkCard({
         >
           <ChevronRight size={18} />
         </button> */}
-      </div>
+      </a>
       <div className="flex flex-row justify-between mt-1.5">
         <div className="text-sm font-medium tracking-tight flex items-center">
           <span className="mr-2">{title}</span>

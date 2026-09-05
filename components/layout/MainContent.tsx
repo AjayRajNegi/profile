@@ -2,7 +2,7 @@ import WorkCard from "../WorkCard";
 
 type WorkItem = {
   title: string;
-  gradient: string;
+  gradient?: string;
   subTitle: string;
   desc: string;
   year: string;
@@ -12,58 +12,52 @@ type WorkItem = {
 
 const workItems: WorkItem[] = [
   {
-    title: "Virsa",
-    gradient: "from-amber-600 via-rose-700 to-rose-900",
-    subTitle: "Festival Identity",
+    title: "Cnipbotics",
+    subTitle: "CBSE Robotics LMS",
     desc: "",
-    year: "'24",
+    year: "'26",
     url: "/works/cnip.png",
-    link: "cnipbotics.com",
+    link: "https://www.cnipbotics.com",
   },
   {
-    title: "Nimbus",
-    gradient: "from-slate-700 via-slate-800 to-neutral-900",
-    subTitle: "",
+    title: "Gaiaspace",
+    subTitle: "Building sustainable space technologies.",
     desc: "",
     year: "'24",
-    url: "/works/cnip.png",
-    link: "cnipbotics.com",
+    url: "/works/gaia1.png",
+    link: "https://www.gaiaspace.co.in",
   },
   {
-    title: "Kavaa",
-    gradient: "from-emerald-600 via-emerald-800 to-neutral-900",
-    subTitle: "",
+    title: "XDesign",
+    subTitle: "I am lazzzy at making designs",
     desc: "",
-    year: "'24",
-    url: "/works/cnip.png",
-    link: "cnipbotics.com",
+    year: "'25",
+    url: "/works/design.png",
+    link: "https://design.ajayhtml.online",
   },
   {
-    title: "Ember",
-    gradient: "from-orange-500 via-red-700 to-neutral-900",
-    subTitle: "",
+    title: "Griya",
+    subTitle: "Real estate platform",
     desc: "",
     year: "'24",
-    url: "/works/cnip.png",
-    link: "cnipbotics.com",
+    url: "/works/grihya.png",
+    link: "https://grihya.in",
   },
   {
-    title: "Loom",
-    gradient: "from-indigo-600 via-indigo-800 to-neutral-900",
-    subTitle: "",
+    title: "Cnippet",
+    subTitle: "Making developers life less stressful.",
     desc: "",
-    year: "'24",
-    url: "/works/cnip.png",
-    link: "cnipbotics.com",
+    year: "'26",
+    url: "/works/cnippet.png",
+    link: "https://cnippet.dev",
   },
   {
-    title: "Terra",
-    gradient: "from-stone-500 via-stone-700 to-neutral-900",
-    subTitle: "",
+    title: "Cnippet.Stack",
+    subTitle: "Developers CLI tool.",
     desc: "",
-    year: "'24",
-    url: "/works/cnip.png",
-    link: "cnipbotics.com",
+    year: "'26",
+    url: "/works/stack.png",
+    link: "https://stack.cnippet.dev",
   },
 ];
 
@@ -99,7 +93,6 @@ export default function () {
             <WorkCard
               key={item.title}
               title={item.title}
-              gradient={item.gradient}
               subTitle={item.subTitle}
               desc={item.desc}
               year={item.year}
