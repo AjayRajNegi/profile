@@ -92,6 +92,7 @@ const LeftSidebar = () => {
           <motion.a
             key={link.label}
             href={link.href}
+            target="_blank"
             aria-label={link.label}
             className="w-fit text-neutral-500 transition-colors hover:text-neutral-900"
             initial={{ opacity: 0, y: 8 }}
