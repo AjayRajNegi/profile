@@ -48,7 +48,7 @@ export default function WorkCard({
           src={url}
           alt={title}
           fill
-          className="aspect-video object-cover object-top"
+          className="aspect-video object-cover object-top hover:scale-105 transition-transform duration-300"
         />
       </a>
 

@@ -32,7 +32,7 @@ const specialties: Specialty[] = [
 
 const LeftSidebar = () => {
   return (
-    <aside className="flex h-fit lg:h-full w-full lg:w-[27%] shrink-0 flex-col justify-between overflow-hidden border-r border-neutral-200 p-4 py-0 pt-20 gap-4 lg:gap-0">
+    <aside className="flex h-fit lg:h-full w-full lg:w-[27%] shrink-0 flex-col justify-between overflow-hidden border-r border-neutral-200 p-4 py-0 pt-30 lg:pt-40 gap-4 lg:gap-0">
       <div>
         <div className="flex items-start justify-start">
           <TextReveal

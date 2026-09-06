@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
+import { Plus, X } from "lucide-react";
 
 type NavItem = {
   label: string;
@@ -32,6 +33,7 @@ const formatDateTime = (date: Date): string => {
 
 const TopBar = () => {
   const [now, setNow] = useState<Date | null>(null);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     setNow(new Date());
@@ -44,70 +46,128 @@ const TopBar = () => {
   };
 
   return (
-    <header className="flex h-14 w-full shrink-0 items-center justify-between border-b border-neutral-200 px-4 text-sm">
-      <motion.a
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 1,
-          delay: 0.3,
-          ease: "easeOut",
-        }}
-        href="/"
-        className="font-medium tracking-tight text-base text-neutral-900 w-[26%]"
-        aria-label="Ajay home"
-      >
-        Ajay.Raj.Negi
-      </motion.a>
+    <header className="w-full fixed top-0 z-20 shrink-0 border-b border-neutral-200 text-sm bg-background">
+      <div className="flex h-14 w-full items-center justify-between px-4">
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          href="/"
+          className="font-medium tracking-tight text-base text-neutral-900 lg:w-[26%]"
+          aria-label="Ajay home"
+        >
+          Ajay.Raj.Negi
+        </motion.a>
 
-      <motion.nav
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 1,
-          delay: 0.3,
-          ease: "easeOut",
-        }}
-        aria-label="Primary"
-        className="flex items-start w-[46%] gap-2"
-      >
-        {navItems.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            className={
-              item.isActive
-                ? "font-medium text-neutral-900"
-                : "text-neutral-400 hover:text-neutral-900"
-            }
+        {/* Desktop nav */}
+        <motion.nav
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          aria-label="Primary"
+          className="hidden lg:flex items-start w-[46%] gap-2"
+        >
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className={
+                item.isActive
+                  ? "font-medium text-neutral-900"
+                  : "text-neutral-400 hover:text-neutral-900"
+              }
+            >
+              {item.label}
+            </a>
+          ))}
+        </motion.nav>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          className="hidden lg:flex items-center justify-between text-sm font-medium tracking-tight w-[26%]"
+        >
+          <span className="text-muted-foreground">
+            {now ? formatDateTime(now) : ""}
+          </span>
+          <button
+            type="button"
+            onClick={handleBookCall}
+            aria-label="Book a call"
+            className="font-medium text-foreground hover:underline"
           >
-            {item.label}
-          </a>
-        ))}
-      </motion.nav>
+            Book a Call
+          </button>
+        </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 1,
-          delay: 0.3,
-          ease: "easeOut",
-        }}
-        className="flex items-center justify-between text-sm font-medium tracking-tight w-[26%]"
-      >
-        <span className="text-muted-foreground">
-          {now ? formatDateTime(now) : ""}
-        </span>
+        {/* Mobile toggle */}
         <button
           type="button"
-          onClick={handleBookCall}
-          aria-label="Book a call"
-          className="font-medium text-foreground hover:underline"
+          onClick={() => setExpanded((prev) => !prev)}
+          aria-label={expanded ? "Close menu" : "Open menu"}
+          aria-expanded={expanded}
+          className="flex lg:hidden h-8 w-8 items-center justify-center rounded-full text-neutral-900"
         >
-          Book a Call
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ rotate: expanded ? 45 : 0, opacity: 1 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="flex items-center justify-center"
+          >
+            {expanded ? (
+              <X size={22} className="text-neutral-400" />
+            ) : (
+              <Plus size={24} className="text-neutral-400" />
+            )}
+          </motion.span>
         </button>
-      </motion.div>
+      </div>
+      <AnimatePresence initial={false}>
+        {expanded && (
+          <motion.div
+            key="mobile-panel"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="absolute left-0 top-full w-full overflow-hidden border-t border-neutral-200 bg-background lg:hidden border"
+          >
+            <div className="flex flex-col gap-4 px-4 py-4">
+              <nav aria-label="Primary" className="flex flex-col gap-2">
+                {navItems.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setExpanded(false)}
+                    className={
+                      item.isActive
+                        ? "font-medium text-neutral-900"
+                        : "text-neutral-400 hover:text-neutral-900"
+                    }
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+
+              <div className="flex items-center justify-between text-sm font-medium tracking-tight">
+                <span className="text-muted-foreground">
+                  {now ? formatDateTime(now) : ""}
+                </span>
+                <button
+                  type="button"
+                  onClick={handleBookCall}
+                  aria-label="Book a call"
+                  className="font-medium text-foreground hover:underline"
+                >
+                  Book a Call
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

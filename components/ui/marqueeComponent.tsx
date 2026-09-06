@@ -3,7 +3,7 @@ import { Marquee } from "./marquee";
 export default function MarqueeComponent() {
   return (
     <>
-      <div className="py-40 relative z-10 bg-background">
+      <div className="pt-28 pb-40 relative z-10 bg-background">
         <Marquee
           className="[--duration:20s] p-0 border border-x-0 cursor-pointer group hover:bg-black duration-300"
           pauseOnHover
