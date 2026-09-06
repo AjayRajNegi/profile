@@ -1,6 +1,6 @@
 "use client";
 
-import { Bird, FileText, Link, WandSparkles } from "lucide-react";
+import { Bird, FileText, GitMerge, Link, WandSparkles } from "lucide-react";
 import type { ReactNode } from "react";
 import { TextReveal } from "../motion/text-reveal";
 import { motion } from "motion/react";
@@ -17,10 +17,27 @@ type Specialty = {
 };
 
 const socialLinks: SocialLink[] = [
-  { label: "Resume", href: "#", icon: <FileText size={16} /> },
-  { label: "LinkedIn", href: "#", icon: <Link size={16} /> },
-  { label: "Behance", href: "#", icon: <WandSparkles size={16} /> },
-  { label: "X", href: "#", icon: <Bird size={16} /> },
+  {
+    label: "Resume",
+    href: "https://drive.google.com/file/d/1a8IIX_DBw5PXjrfawo74Tf3AnQwf90aI/view",
+    icon: <FileText size={16} />,
+  },
+  {
+    label: "Github",
+    href: "https://github.com/AjayRajNegi",
+    icon: <GitMerge size={16} />,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/ajay-raj-negi-a3713a262/",
+    icon: <Link size={16} />,
+  },
+
+  {
+    label: "Twitter",
+    href: "https://x.com/AjayRajNegi1608",
+    icon: <Bird size={16} />,
+  },
 ];
 
 const specialties: Specialty[] = [

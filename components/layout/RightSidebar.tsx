@@ -140,7 +140,7 @@ export default function RightSidebar() {
                   },
                 },
               }}
-              className="hover:text-neutral-900"
+              className={`${link.label === "+91 8433 038283" ? "text-[14px]" : ""}  : `}
             >
               {link.label}
             </motion.a>

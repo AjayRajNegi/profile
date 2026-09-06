@@ -76,10 +76,10 @@ const workItems: WorkItem[] = [
 
 export default function MainContent() {
   const firstText =
-    "A visual designer specializing in brand identity and visual communication";
+    "An expert in building end-to-end web/app products which lasts way longer than your claude session.";
 
   const secondText =
-    " — creating strategic visual systems that feel intentional, refined, and timeless.";
+    " - putting extra thought(not inference) at every step to make software better.";
   return (
     <main className="h-full flex-1 overflow-y-auto border-r border-neutral-200 scrollbar-none [&::-webkit-scrollbar]:hidden">
       <div className="pt-0 lg:pt-20">
@@ -88,13 +88,13 @@ export default function MainContent() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="sticky top-0 z-0 px-4 pt-20"
+          className="sticky top-0 z-0 px-2 lg:px-4 pt-20"
         >
           <div className="gap-16">
             <div className="min-w-full">
               <TextReveal
                 as="span"
-                className="text-left text-[26px] font-medium leading-[1.05] tracking-tighter"
+                className="text-center text-[18px] lg:text-[26px] font-medium leading-px lg:leading-[1.05] tracking-tighter"
                 per="word"
                 preset="fade-in-blur"
                 speedReveal={1.8}
@@ -104,7 +104,7 @@ export default function MainContent() {
 
               <TextReveal
                 as="span"
-                className="text-left text-[26px] font-medium leading-[1.05] tracking-tighter text-muted-foreground"
+                className="text-center text-[18px] lg:text-[26px] font-medium leading-px lg:leading-[1.05] tracking-tighter text-muted-foreground"
                 per="word"
                 delay={0.6}
                 preset="fade-in-blur"
