@@ -41,10 +41,6 @@ const TopBar = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const handleBookCall = () => {
-    window.open("#", "_blank");
-  };
-
   return (
     <header className="w-full fixed top-0 z-20 shrink-0 border-b border-neutral-200 text-sm bg-background">
       <div className="flex h-14 w-full items-center justify-between px-4">
@@ -91,14 +87,16 @@ const TopBar = () => {
           <span className="text-muted-foreground">
             {now ? formatDateTime(now) : ""}
           </span>
-          <button
-            type="button"
-            onClick={handleBookCall}
+          <a
+            type="link"
+            href="https://wa.me/+918433038283?text=Hi%20Ajay"
             aria-label="Book a call"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-medium text-foreground hover:underline"
           >
-            Book a Call
-          </button>
+            Text me Here!
+          </a>
         </motion.div>
 
         {/* Mobile toggle */}
@@ -155,14 +153,16 @@ const TopBar = () => {
                 <span className="text-muted-foreground">
                   {now ? formatDateTime(now) : ""}
                 </span>
-                <button
-                  type="button"
-                  onClick={handleBookCall}
+                <a
+                  type="link"
+                  href="https://wa.me/+918433038283?text=Hi%20Ajay"
                   aria-label="Book a call"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="font-medium text-foreground hover:underline"
                 >
                   Book a Call
-                </button>
+                </a>
               </div>
             </div>
           </motion.div>
