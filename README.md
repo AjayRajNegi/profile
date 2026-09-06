@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ajay Raj Negi — Portfolio
 
-## Getting Started
+Personal site for **Ajay Raj Negi**, a full-stack developer, DevOps engineer, and React Native developer based in India. It presents selected product work, contact details, and links to GitHub, LinkedIn, X, and a resume.
 
-First, run the development server:
+**Live:** [ajayhtml.online](https://ajayhtml.online)  
+**Repository:** [github.com/AjayRajNegi/profile](https://github.com/AjayRajNegi/profile)
+
+## Features
+
+- Three-column desktop layout with a stacked mobile layout
+- Selected work cards for Cnipbotics, Cnippet, Cnippet.Stack, Gaiaspace, Griya, Seahawk, and XDesign
+- Motion-based text reveal and hover states
+- SEO metadata, Open Graph / X cards, sitemap, robots, and Person structured data
+- Direct contact via email, phone, and WhatsApp
+
+## Tech stack
+
+| Layer | Tools |
+| --- | --- |
+| Framework | Next.js 16 (App Router), React 19 |
+| Language | TypeScript |
+| Styling | Tailwind CSS 4, shadcn / Base UI |
+| Motion | Motion |
+| Tooling | Bun, Biome |
+
+## Getting started
+
+Requires [Bun](https://bun.sh) `1.3.8` or later (see `packageManager` in `package.json`).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+bun install
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+| --- | --- |
+| `bun dev` | Start the development server |
+| `bun run build` | Create a production build |
+| `bun start` | Serve the production build |
+| `bun lint` | Run Biome checks |
+| `bun format` | Format with Biome |
 
-## Learn More
+### Site URL
 
-To learn more about Next.js, take a look at the following resources:
+SEO tags (`metadataBase`, canonical, sitemap, Open Graph) use:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+NEXT_PUBLIC_SITE_URL=https://ajayhtml.online
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Set this in your host’s environment if the live domain changes. The fallback is `https://ajayhtml.online`.
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```text
+app/                 # App Router entry, metadata, sitemap, robots, OG image
+components/layout/   # Top bar, sidebars, main work column
+components/          # Work cards, motion, UI primitives
+lib/site.ts          # Shared site copy, links, and JSON-LD
+public/              # Profile photo and work stills
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contact
+
+- Email: [ajayrajnegi1608@gmail.com](mailto:ajayrajnegi1608@gmail.com)
+- GitHub: [AjayRajNegi](https://github.com/AjayRajNegi)
+- LinkedIn: [Ajay Raj Negi](https://www.linkedin.com/in/ajay-raj-negi-a3713a262/)
+- X: [@AjayRajNegi1608](https://x.com/AjayRajNegi1608)
+
+## License
+
+This repository is personal work. All rights reserved unless a license file is added.

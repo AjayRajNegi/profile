@@ -1,8 +1,8 @@
 "use client";
 
+import { motion } from "motion/react";
 import Image from "next/image";
 import { TextReveal } from "../motion/text-reveal";
-import { motion } from "motion/react";
 
 type ContactLink = {
   label: string;
@@ -67,14 +67,14 @@ export default function RightSidebar() {
           >
             <Image
               src="/profile.jpg"
-              alt="Aditya"
+              alt="Ajay Raj Negi"
               width={240}
               height={360}
               className="object-cover block lg:hidden"
             />
             <Image
               src="/profile.jpg"
-              alt="Aditya"
+              alt="Ajay Raj Negi"
               width={200}
               height={360}
               className="object-cover hidden lg:block"
