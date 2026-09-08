@@ -81,8 +81,8 @@ export default function MainContent() {
   const secondText =
     " - putting extra thought(not inference) at every step to make software better.";
   return (
-    <main className="h-full flex-1 overflow-y-auto border-r border-neutral-200 scrollbar-none [&::-webkit-scrollbar]:hidden">
-      <div className="pt-0 lg:pt-20">
+    <main className="h-full flex-1 overflow-y-auto border-r border-neutral-200 scrollbar-none [&::-webkit-scrollbar]:hidden lg:pt-20">
+      <div className="pt-0">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

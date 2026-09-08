@@ -120,7 +120,7 @@ export default function RightSidebar() {
               },
             },
           }}
-          className="flex flex-col items-start text-base font-semibold tracking-tight"
+          className="flex flex-col items-start font-semibold tracking-tight"
         >
           {contactLinks.map((link) => (
             <motion.a
@@ -140,7 +140,7 @@ export default function RightSidebar() {
                   },
                 },
               }}
-              className={`${link.label === "+91 8433 038283" ? "text-[14px]" : ""}  : `}
+              className={`${link.label === "+91 8433 038283" ? "text-xs lg:text-sm" : "text-sm lg:text-base"}  : `}
             >
               {link.label}
             </motion.a>
@@ -155,7 +155,7 @@ export default function RightSidebar() {
             delay: 0.35,
             ease: "easeOut",
           }}
-          className="text-base font-medium tracking-tight text-muted-foreground"
+          className="text-sm lg:text-base font-medium tracking-tighter text-muted-foreground"
         >
           © {new Date().getFullYear()}
         </motion.span>

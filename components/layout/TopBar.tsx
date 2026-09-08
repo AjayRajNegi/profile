@@ -161,7 +161,7 @@ const TopBar = () => {
                   rel="noopener noreferrer"
                   className="font-medium text-foreground hover:underline"
                 >
-                  Book a Call
+                  Text me Here!
                 </a>
               </div>
             </div>
