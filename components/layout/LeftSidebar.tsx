@@ -1,9 +1,9 @@
 "use client";
 
 import { Bird, FileText, GitMerge, Link, WandSparkles } from "lucide-react";
+import { motion } from "motion/react";
 import type { ReactNode } from "react";
 import { TextReveal } from "../motion/text-reveal";
-import { motion } from "motion/react";
 
 type SocialLink = {
   label: string;
@@ -102,6 +102,7 @@ const LeftSidebar = () => {
               delay: index * 0.2,
               ease: "easeOut",
             }}
+            rel="noopener"
           >
             {link.icon}
           </motion.a>

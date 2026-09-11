@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "motion/react";
+import { TextReveal } from "../motion/text-reveal";
 import MarqueeComponent from "../ui/marqueeComponent";
 import WorkCard from "../WorkCard";
-import { TextReveal } from "../motion/text-reveal";
 
 type WorkItem = {
   title: string;
@@ -50,7 +50,7 @@ const workItems: WorkItem[] = [
   },
   {
     title: "Seahawk",
-    subTitle: "Making developers life less stressful.",
+    subTitle: "Following trails of The Great Ganges",
     desc: "",
     year: "'26",
     url: "/works/sea.png",

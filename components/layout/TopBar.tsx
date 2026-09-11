@@ -1,8 +1,8 @@
 "use client";
 
+import { Plus, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { Plus, X } from "lucide-react";
 
 type NavItem = {
   label: string;
