@@ -17,6 +17,22 @@ type WorkItem = {
 
 const workItems: WorkItem[] = [
   {
+    title: "Cnippet",
+    subTitle: "Making developers life less stressful.",
+    desc: "",
+    year: "'26",
+    url: "/works/cnippet.png",
+    link: "https://cnippet.dev",
+  },
+  {
+    title: "Ui.Cnippet",
+    subTitle: "Components library for developers.",
+    desc: "",
+    year: "'26",
+    url: "/works/ui.png",
+    link: "https://ui.cnippet.dev",
+  },
+  {
     title: "Cnipbotics",
     subTitle: "CBSE Robotics LMS",
     desc: "",
@@ -25,12 +41,12 @@ const workItems: WorkItem[] = [
     link: "https://www.cnipbotics.com",
   },
   {
-    title: "Cnippet.Stack",
-    subTitle: "Developers CLI tool.",
+    title: "Seahawk",
+    subTitle: "Following trails of The Great Ganges",
     desc: "",
     year: "'26",
-    url: "/works/stack.png",
-    link: "https://stack.cnippet.dev",
+    url: "/works/sea.png",
+    link: "https://www.seahawkadventures.com/",
   },
   {
     title: "Gaiaspace",
@@ -48,30 +64,14 @@ const workItems: WorkItem[] = [
     url: "/works/grihya2.png",
     link: "https://grihya.in",
   },
-  {
-    title: "Seahawk",
-    subTitle: "Following trails of The Great Ganges",
-    desc: "",
-    year: "'26",
-    url: "/works/sea.png",
-    link: "https://www.seahawkadventures.com/",
-  },
-  {
-    title: "XDesign",
-    subTitle: "I am lazzzy at making designs",
-    desc: "",
-    year: "'25",
-    url: "/works/design.png",
-    link: "https://design.ajayhtml.online",
-  },
-  {
-    title: "Cnippet",
-    subTitle: "Making developers life less stressful.",
-    desc: "",
-    year: "'26",
-    url: "/works/cnippet.png",
-    link: "https://cnippet.dev",
-  },
+  // {
+  //   title: "XDesign",
+  //   subTitle: "I am lazzzy at making designs",
+  //   desc: "",
+  //   year: "'25",
+  //   url: "/works/design.png",
+  //   link: "https://design.ajayhtml.online",
+  // },
 ];
 
 export default function MainContent() {
