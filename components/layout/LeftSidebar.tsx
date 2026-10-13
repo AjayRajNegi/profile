@@ -19,7 +19,7 @@ type Specialty = {
 const socialLinks: SocialLink[] = [
   {
     label: "Resume",
-    href: "https://drive.google.com/file/d/1a8IIX_DBw5PXjrfawo74Tf3AnQwf90aI/view",
+    href: "https://drive.google.com/drive/u/1/folders/18tSr8-XI6iXLpfq-Lj49URKBxDDpdqdn",
     icon: <FileText size={16} />,
   },
   {
