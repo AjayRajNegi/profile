@@ -48,20 +48,6 @@ const workItems: WorkItem[] = [
     ],
   },
   {
-    title: "Cnipbotics",
-    subTitle: "CBSE Robotics LMS",
-    desc: "A robotics learning platform for CBSE schools, Classes 7 to 10. Students build real Arduino and Raspberry Pi projects that match chapters in their science textbook, and teachers get lesson plans and training.",
-    year: "'26",
-    url: "/works/cnip.png",
-    link: "https://www.cnipbotics.com",
-    problem:
-      "Schools wanted robotics that supports what is already taught in class instead of being an add-on, and teachers without a STEM background needed a way to run it with confidence.",
-    solution:
-      "With a cross-functional team, I built the learning platform: course and lesson pages with adaptive video, course content managed as documents, optimised images and secure course payments. I designed the caching layer that keeps pages loading quickly by avoiding repeated data fetching.",
-    result:
-      "Serving 1500+ across Uttarakhand with upcoming collaboration with Uttarkhand Govt. Students progress from Arduino basics to Raspberry Pi, IoT and AI projects across Classes 7 to 10.",
-  },
-  {
     title: "Seahawk",
     subTitle: "Following trails of The Great Ganges",
     desc: "Website and booking enquiries for a river rafting, kayaking and camping company in Rishikesh, built so travellers searching for rafting can find it and book easily.",
